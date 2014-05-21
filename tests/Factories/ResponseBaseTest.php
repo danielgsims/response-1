@@ -12,7 +12,7 @@ class ResponseBaseTest extends PHPUnit_Framework_TestCase
   private $message = 'test';
   private $args = array();
 
-  public function __construct()
+  public function setUp()
   {
     $this->responseFactory = new ResponseDummyImplementation;
   }

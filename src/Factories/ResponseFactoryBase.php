@@ -54,7 +54,63 @@ abstract class ResponseFactoryBase
       $this->methodNotImplemented();
   }
 
+  /**
+  *
+  * Return Response with Status Code 203
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function nonAuthoritativeInformation($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+  
  /**
+  *
+  * Return Response with Status Code 204
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function noContent($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 205
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function resetContent($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 206
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function partialContent($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+  /**
   *
   * Return Response with Status Code 301
   * 
@@ -127,6 +183,20 @@ abstract class ResponseFactoryBase
  /**
   *
   * Return Response with Status Code 403
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function forbidden($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 404
   * 
   * @param string $content The response content
   * @param array $headers The headers array
