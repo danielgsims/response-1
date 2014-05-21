@@ -3,104 +3,149 @@
 use Symfony\Component\HttpFoundation\Response;
 use QL\Response\Exceptions\MethodNotImplementedException;
 
+/**
+ * Response Factory Base Class
+ *
+ * The response factory base class defines HTTP methods, but defaults their
+ * implementation to a methodNotImplemented exception. This is so that in
+ * any derived factory, only certain responses need to be exposed.
+ */
 abstract class ResponseFactoryBase
 {
   /**
-  * Status code 200
-  * SHOULD have a entity
+  *
+  * Return Response with Status Code 200
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function ok($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 201
-  * SHOULD have an entity
-  * origin server MUST create the resource
-  * SHOULD have Header field Location of the created resource
+ /**
+  *
+  * Return Response with Status Code 201
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function created($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 202
-  * SHOULD include indication of the request's current state
+ /**
+  *
+  * Return Response with Status Code 202
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function accepted($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 204
-  * MUST NOT have a message body
-  */
-  public function noContent($content, $headers = array())
-  {
-      $this->methodNotImplemented();
-  }
-
-  /**
-  * Status code 301
+ /**
+  *
+  * Return Response with Status Code 301
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function movedPermanently($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 302
+ /**
+  *
+  * Return Response with Status Code 302
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function found($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 303
+ /**
+  *
+  * Return Response with Status Code 303
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function seeOther($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 400
+ /**
+  *
+  * Return Response with Status Code 400
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function badRequest($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 401
+ /**
+  *
+  * Return Response with Status Code 401
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function unauthorized($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 403
-  */
-  public function forbidden($content, $headers = array())
-  {
-      $this->methodNotImplemented();
-  }
-
-  /**
-  * Status code 404
+ /**
+  *
+  * Return Response with Status Code 403
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function notFound($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
-  /**
-  * Status code 405
+ /**
+  *
+  * Return Response with Status Code 405
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function methodNotAllowed($content, $headers = array())
   {
@@ -108,8 +153,13 @@ abstract class ResponseFactoryBase
   }
 
   /**
-  * Status code 406
-  * AKA: The Earl of Lemongrab
+  *
+  * Return Response with Status Code 406
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function notAcceptable($content, $headers = array())
   {
@@ -165,22 +215,45 @@ abstract class ResponseFactoryBase
           +++++=I8OOOOOOOOOOOOO8OI===+++++++++++II+====+II?=+++++==Z8OOOOOOOOOOOOOO8OOOOOO
           +++++=+8OOOOOOOOOOOOOO88ZI===+++++++++=?II??II?++++++++=78OOOOOOOOOOOOOOO8OOOOOO
           ++++++=Z8OOOOOOOOOOOOOOOOO888Z7+====++++++++++++++===+I8OOOOOOOOOOOOOOOOO8OOOOOO
-          ++++++=78OOOOOOOOOOOOOOOOOOOO888O$I?++++++++++++++?7ZO8OOOOOOOOOOOOOOOOO88OOOO*/
+          ++++++=78OOOOOOOOOOOOOOOOOOOO888O$I?++++++++++++++?7ZO8OOOOOOOOOOOOOOOOO88OOOO */ 
+
   }
 
   /**
-  * Status code 500
+  *
+  * Return Response with Status Code 500
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
   */
   public function internalServerError($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
 
+  /**
+  *
+  * Create a Response object
+  * 
+  * @param string $message The response content
+  * @param int $status HTTP Status Code
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
   public function send($message, $status, array $headers = array())
   {
     return new Response($message, $status, $headers);
   }
 
+  /**
+  *
+  * Default behavior if a code is not implemented
+  * 
+  * @throws MethodNotImplementedException
+  */
   private function methodNotImplemented()
   {
       throw new MethodNotImplementedException();
