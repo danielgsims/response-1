@@ -110,7 +110,21 @@ abstract class ResponseFactoryBase
       $this->methodNotImplemented();
   }
 
-  /**
+ /**
+  *
+  * Return Response with Status Code 300
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function multipleChoices($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
   *
   * Return Response with Status Code 301
   * 
@@ -151,6 +165,49 @@ abstract class ResponseFactoryBase
   {
       $this->methodNotImplemented();
   }
+ 
+ /**
+  *
+  * Return Response with Status Code 304
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function notMotified($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 305
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function useProxy($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 307
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function temporaryRedirect($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
 
  /**
   *
@@ -176,6 +233,21 @@ abstract class ResponseFactoryBase
   * @throws MethodNotImplementedException
   */
   public function unauthorized($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+
+ /**
+  *
+  * Return Response with Status Code 402
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function paymentRequired($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
@@ -289,6 +361,162 @@ abstract class ResponseFactoryBase
 
   }
 
+
+ /**
+  *
+  * Return Response with Status Code 407
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function proxyAuthenticationRequired($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 408
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function requestTimeout($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 409
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function conflict($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 410
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function gone($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+
+ /**
+  *
+  * Return Response with Status Code 411
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function lengthRequired($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 412
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function preconditionFailed($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 413
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function requestEntityTooLarge($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 414
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function requestUriTooLong($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 415
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function unsupportedMediaType($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 416
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function requestRangeNotSatisfiable($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 417
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function expectationFailed($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
   /**
   *
   * Return Response with Status Code 500
@@ -299,6 +527,76 @@ abstract class ResponseFactoryBase
   * @throws MethodNotImplementedException
   */
   public function internalServerError($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 501
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function notImplemented($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 502
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function badGateway($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 503
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function serviceUnavailable($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 504
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function gatewayTimeout($content, $headers = array())
+  {
+      $this->methodNotImplemented();
+  }
+
+ /**
+  *
+  * Return Response with Status Code 505
+  * 
+  * @param string $content The response content
+  * @param array $headers The headers array
+  * @return Response
+  * @throws MethodNotImplementedException
+  */
+  public function httpVersionNotSupported($content, $headers = array())
   {
       $this->methodNotImplemented();
   }
