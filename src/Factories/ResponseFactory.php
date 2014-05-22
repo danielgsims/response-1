@@ -257,7 +257,7 @@ class ResponseFactory extends ResponseFactoryBase
   */
   public function lengthRequired($content, $headers = array())
   {
-      return $this->send($content, 412, $headers);
+      return $this->send($content, 411, $headers);
   }
 
   /**

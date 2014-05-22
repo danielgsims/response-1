@@ -19,83 +19,8 @@ class ResponseBaseTest extends PHPUnit_Framework_TestCase
 
   public function isExceptionThrown($method)
   {
-    try {
-      $this->responseFactory->$method($this->message, $this->args);
-      return false;
-    }
-    catch (MethodNotImplementedException $e) {
-      return true;
-    }
-  }
-
-  public function testOk()
-  {
-    $this->assertTrue($this->isExceptionThrown('ok'));
-  }
-
-  public function testCreated()
-  {
-    $this->assertTrue($this->isExceptionThrown('created'));
-  }
-
-  public function testAccepted()
-  {
-    $this->assertTrue($this->isExceptionThrown('accepted'));
-  }
-
-  public function testNoContent()
-  {
-    $this->assertTrue($this->isExceptionThrown('noContent'));
-  }
-
-  public function testMovedPermanently()
-  {
-    $this->assertTrue($this->isExceptionThrown('movedPermanently'));
-  }
-
-  public function testFound()
-  {
-    $this->assertTrue($this->isExceptionThrown('found'));
-  }
-
-  public function testSeeOther()
-  {
-    $this->assertTrue($this->isExceptionThrown('seeOther'));
-  }
-
-  public function testBadRequest()
-  {
-    $this->assertTrue($this->isExceptionThrown('badRequest'));
-  }
-
-  public function testUnauthorized()
-  {
-    $this->assertTrue($this->isExceptionThrown('unauthorized'));
-  }
-
-  public function testForbidden()
-  {
-    $this->assertTrue($this->isExceptionThrown('forbidden'));
-  }
-
-  public function testNotFound()
-  {
-    $this->assertTrue($this->isExceptionThrown('notFound'));
-  }
-
-  public function testMethodNotAllowed()
-  {
-    $this->assertTrue($this->isExceptionThrown('methodNotAllowed'));
-  }
-
-  public function testNotAcceptable()
-  {
-    $this->assertTrue($this->isExceptionThrown('notAcceptable'));
-  }
-
-  public function testInternalServerError()
-  {
-    $this->assertTrue($this->isExceptionThrown('internalServerError'));
+     $this->setExpectedException('QL\Response\Exceptions\MethodNotImplementedException');
+     $this->responseFactory->$method($this->message, $this->args);
   }
 
   public function testSend()
@@ -113,5 +38,195 @@ class ResponseBaseTest extends PHPUnit_Framework_TestCase
     $this->assertEquals($response->headers->get($key), $val);
     $this->assertEquals($response->getContent(), $content);
     $this->assertEquals($response->getStatusCode(), $statusCode);
+  }
+
+  public function test_ok()
+  {
+    $this->isExceptionThrown("ok");
+  }
+
+  public function test_created()
+  {
+    $this->isExceptionThrown("created");
+  }
+
+  public function test_accepted()
+  {
+    $this->isExceptionThrown("accepted");
+  }
+
+  public function test_nonAuthoritativeInformation()
+  {
+    $this->isExceptionThrown("nonAuthoritativeInformation");
+  }
+
+  public function test_noContent()
+  {
+    $this->isExceptionThrown("noContent");
+  }
+
+  public function test_resetContent()
+  {
+    $this->isExceptionThrown("resetContent");
+  }
+
+  public function test_partialContent()
+  {
+    $this->isExceptionThrown("partialContent");
+  }
+
+  public function test_multipleChoices()
+  {
+    $this->isExceptionThrown("multipleChoices");
+  }
+
+  public function test_movedPermanently()
+  {
+    $this->isExceptionThrown("movedPermanently");
+  }
+
+  public function test_found()
+  {
+    $this->isExceptionThrown("found");
+  }
+
+  public function test_seeOther()
+  {
+    $this->isExceptionThrown("seeOther");
+  }
+
+  public function test_notMotified()
+  {
+    $this->isExceptionThrown("notMotified");
+  }
+
+  public function test_useProxy()
+  {
+    $this->isExceptionThrown("useProxy");
+  }
+
+  public function test_temporaryRedirect()
+  {
+    $this->isExceptionThrown("temporaryRedirect");
+  }
+
+  public function test_badRequest()
+  {
+    $this->isExceptionThrown("badRequest");
+  }
+
+  public function test_unauthorized()
+  {
+    $this->isExceptionThrown("unauthorized");
+  }
+
+  public function test_paymentRequired()
+  {
+    $this->isExceptionThrown("paymentRequired");
+  }
+
+  public function test_forbidden()
+  {
+    $this->isExceptionThrown("forbidden");
+  }
+
+  public function test_notFound()
+  {
+    $this->isExceptionThrown("notFound");
+  }
+
+  public function test_methodNotAllowed()
+  {
+    $this->isExceptionThrown("methodNotAllowed");
+  }
+
+  public function test_notAcceptable()
+  {
+    $this->isExceptionThrown("notAcceptable");
+  }
+
+  public function test_proxyAuthenticationRequired()
+  {
+    $this->isExceptionThrown("proxyAuthenticationRequired");
+  }
+
+  public function test_requestTimeout()
+  {
+    $this->isExceptionThrown("requestTimeout");
+  }
+
+  public function test_conflict()
+  {
+    $this->isExceptionThrown("conflict");
+  }
+
+  public function test_gone()
+  {
+    $this->isExceptionThrown("gone");
+  }
+
+  public function test_lengthRequired()
+  {
+    $this->isExceptionThrown("lengthRequired");
+  }
+
+  public function test_preconditionFailed()
+  {
+    $this->isExceptionThrown("preconditionFailed");
+  }
+
+  public function test_requestEntityTooLarge()
+  {
+    $this->isExceptionThrown("requestEntityTooLarge");
+  }
+
+  public function test_requestUriTooLong()
+  {
+    $this->isExceptionThrown("requestUriTooLong");
+  }
+
+  public function test_unsupportedMediaType()
+  {
+    $this->isExceptionThrown("unsupportedMediaType");
+  }
+
+  public function test_requestRangeNotSatisfiable()
+  {
+    $this->isExceptionThrown("requestRangeNotSatisfiable");
+  }
+
+  public function test_expectationFailed()
+  {
+    $this->isExceptionThrown("expectationFailed");
+  }
+
+  public function test_internalServerError()
+  {
+    $this->isExceptionThrown("internalServerError");
+  }
+
+  public function test_notImplemented()
+  {
+    $this->isExceptionThrown("notImplemented");
+  }
+
+  public function test_badGateway()
+  {
+    $this->isExceptionThrown("badGateway");
+  }
+
+  public function test_serviceUnavailable()
+  {
+    $this->isExceptionThrown("serviceUnavailable");
+  }
+
+  public function test_gatewayTimeout()
+  {
+    $this->isExceptionThrown("gatewayTimeout");
+  }
+
+  public function test_httpVersionNotSupported()
+  {
+    $this->isExceptionThrown("httpVersionNotSupported");
   }
 }
